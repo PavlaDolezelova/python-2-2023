@@ -101,7 +101,9 @@ def swing_winner(row):
 vitezove_voleb["swing"] = vitezove_voleb.apply(swing_winner, axis=1)
 print(vitezove_voleb.head())
 
-vitezove_voleb_pivot = vitezove_voleb.groupby(["year", "swing"])["swing"].count()
+vitezove_voleb = vitezove_voleb[vitezove_voleb["year"] >1976]
+vitezove_voleb_pivot = vitezove_voleb.groupby(["year", "swing"])[["swing"]].count()
+vitezove_voleb_pivot = vitezove_voleb_pivot.rename(columns={"swing": "count"})
 vitezove_voleb_pivot = pandas.DataFrame(vitezove_voleb_pivot)
-#vitezove_voleb_pivot = vitezove_voleb_pivot.sort_values("year","swing", ascending=False)
+vitezove_voleb_pivot = vitezove_voleb_pivot.sort_values(["year", "swing"])
 print(vitezove_voleb_pivot)
