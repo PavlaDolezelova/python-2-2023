@@ -1,5 +1,5 @@
 import pandas
-
+ 
 # Načteme data
 df_volby = pandas.read_csv('1976-2020-president.csv')
 # Zobrazíme si prvních 5 řádků 
