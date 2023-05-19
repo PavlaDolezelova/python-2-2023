@@ -2,7 +2,7 @@ import pandas
 
 # Načteme data
 df_volby = pandas.read_csv('1976-2020-president.csv')
-# Zobrazíme si prvních 5 řádků
+# Zobrazíme si prvních 5 řádků 
 print(df_volby.head())
 
 # Zobrazíme si posledních 5 řádků
